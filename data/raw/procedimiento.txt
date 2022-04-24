@@ -1,0 +1,19 @@
+Nombre de documentos:
+- Los vamos a nombrar según las siguientes convenciones:
+  - CATEGORÍA: Usamos las 3 primeras letras según quién responde.
+      * Docentes
+      * Estudiantes
+      * Directivos
+      * Mentores
+  - COMPONENTE: Usamos las 3 primeras letras del componente al que pertenecen
+      * Consolidación
+      * Formación
+      * App
+      * CAP
+  - TIPO DE INSTRUMENTO: Usamos los siguietes códigos.
+      * Pre: Pretest o cuestionario inicial
+      * Post: Posttest o cuestionario final
+      * Prepost: Cuando unamos ambas bases de datos
+      * Sat: Encuestas de satisfacción
+      * Obs: Observaciones de aula
+  - FECHA DE DESCARGA: Formato DDMMAA
