@@ -4,7 +4,7 @@ import numpy as np
 
 
 def app():
-    st.title('..Coding For Kids 2022 ...')
+    st.title('Coding For Kids 2022')
 
     st.write("Resumen del Proyecto")
     c1 = st.container()
