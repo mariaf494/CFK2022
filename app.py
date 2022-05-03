@@ -1,4 +1,4 @@
-# Imports
+# Import streamlit
 import streamlit as st
 
 

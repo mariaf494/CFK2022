@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  streamlit_cfk2022:
+    container_name: streamlit_cfk2022
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - '8506:8501'
