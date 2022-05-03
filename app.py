@@ -5,12 +5,14 @@ import streamlit as st
 # Import each page file
 from apps import inicio
 from apps import dashboard_cons
+from apps import marco
 
 
 
 PAGES = {
     "Inicio": inicio,
-    "Caracterización Inicial": dashboard_cons
+    "Caracterización Inicial": dashboard_cons,
+    "Prueba marco": marco
 }
 
 
