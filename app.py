@@ -6,11 +6,12 @@ import streamlit as st
 from apps import inicio
 from apps import dashboard_cons
 from apps import marco
-
+from apps import Avanceconsolidacion
 
 
 PAGES = {
     "Inicio": inicio,
+    "Avance Consolidación": Avanceconsolidacion,
     "Caracterización Inicial": dashboard_cons,
     "Prueba marco": marco
 }
