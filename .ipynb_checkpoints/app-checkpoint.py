@@ -1,16 +1,19 @@
-# Imports
+# Import streamlit
 import streamlit as st
 
 
 # Import each page file
 from apps import inicio
 from apps import dashboard_cons
-
+from apps import marco
+from apps import Avanceconsolidacion
 
 
 PAGES = {
     "Inicio": inicio,
-    "Caracterización Inicial": dashboard_cons
+    "Avance Consolidación": Avanceconsolidacion,
+    "Caracterización Inicial": dashboard_cons,
+    "Prueba marco": marco
 }
 
 
