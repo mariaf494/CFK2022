@@ -9,7 +9,7 @@ config = plots.get_config()
 
 def app():
     st.title('Marco de consolidación 2022')
-    marco = pd.read_excel('data/Marco acumulativo.xlsx', index_col=0)
+    marco = pd.read_excel('data/Marco acumulativo.xlsx')
     IE = st.multiselect('Seleccione las instituciones que desea ver: ', list(marco['Código IE'].unique()))
 
     marco = marco.melt(id_vars='Código IE', var_name='Dimension', value_name='Nivel')
