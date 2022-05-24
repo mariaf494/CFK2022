@@ -52,6 +52,12 @@ def app():
     width='100%',
     reload_data=True
     )
+    df_xlsx = to_excel(tabla2)
+    st.download_button(
+     label="Descargar Avance Consolidación",
+     data=df_xlsx,
+     file_name='Avance Consolidación.xlsx',
+     mime='text/xlsx',key=1
 
 
     st.write("### Descarga de datos")
@@ -63,15 +69,12 @@ def app():
     * :exclamation: [Registros eliminados](https://drive.google.com/drive/folders/1xaulGr1dAuJqx2AwtGRKCcRhm9jQZCUP?usp=sharing)
     ''')
 
+
+
     # b_col1, b_col2, b_col3 = st.columns(3)
     #
     # with b_col1:
-    #     df_xlsx = to_excel(tabla2)
-    #     st.download_button(
-    #      label="Descargar Avance Consolidación",
-    #      data=df_xlsx,
-    #      file_name='Avance Consolidación.xlsx',
-    #      mime='text/xlsx',key=1
+
     #     )
     #     docentes = read_database('data/descargables/DocentesCFK.xlsx')
     #     df_xlsx = to_excel(docentes)
