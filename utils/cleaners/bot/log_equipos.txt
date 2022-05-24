@@ -33,3 +33,5 @@ columnas:  Index(['Email Address', 'Código IE',
        'Amplíe sus comentarios sobre los elementos desconectados disponibles en la sede.',
        'N registro', 'Fecha', 'Instrumento', 'ID'],
       dtype='object')
+Publicados  (233, 32)
+Eliminados  (15, 32)

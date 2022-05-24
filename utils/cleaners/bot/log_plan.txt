@@ -41,3 +41,5 @@ Columnas  Index(['Código IE',
        'Visión de la institución educativa', 'N registro', 'Fecha',
        'Instrumento'],
       dtype='object')
+Publicados  (222, 22)
+Eliminados  (1, 22)
