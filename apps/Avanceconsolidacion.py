@@ -19,8 +19,8 @@ def to_excel(df):
     df.to_excel(writer, index=False, sheet_name='Sheet1')
     workbook = writer.book
     worksheet = writer.sheets['Sheet1']
-    format1 = workbook.add_format({'num_format': '0.00'}) 
-    worksheet.set_column('A:A', None, format1)  
+    format1 = workbook.add_format({'num_format': '0.00'})
+    worksheet.set_column('A:A', None, format1)
     writer.save()
     processed_data = output.getvalue()
     return processed_data
@@ -31,7 +31,7 @@ def read_database(name):
 
 def app():
     st.title('Avance Consolidación 2022')
-    
+
     tabla = pd.read_excel('data/InstrumentosCFK.xlsx', index_col=0)
     st.write('Fecha de actualización:',tabla.loc[0,'Fecha'])
     tabla2= tabla.iloc[:,:-1]
@@ -43,76 +43,82 @@ def app():
     grid_response = AgGrid(
     tabla2,
     gridOptions=gridOptions,
-    data_return_mode='AS_INPUT', 
-    update_mode='MODEL_CHANGED', 
+    data_return_mode='AS_INPUT',
+    update_mode='MODEL_CHANGED',
     fit_columns_on_grid_load=True,
     theme= 'streamlit', #Add theme color to the table
     enable_enterprise_modules=False,
-    height=400, 
+    height=400,
     width='100%',
     reload_data=True
     )
-    
-    
+
+
     st.write("### Descarga de datos")
 
-    
-    b_col1, b_col2, b_col3 = st.columns(3)
-    
-    with b_col1:
-        df_xlsx = to_excel(tabla2)
-        st.download_button(
-         label="Descargar Avance Consolidación",
-         data=df_xlsx,
-         file_name='Avance Consolidación.xlsx',
-         mime='text/xlsx',key=1
-        )
-        docentes = read_database('data/descargables/DocentesCFK.xlsx')
-        df_xlsx = to_excel(docentes)
-        st.download_button(
-         label="Descargar Base de datos docentes",
-         data=df_xlsx,
-         file_name='Docentes.xlsx',
-         mime='text/xlsx',key=0
-        )
-        
-    with b_col2:
-        estudiantes = read_database('data/descargables/EstudiantesCFK.xlsx')
-        df_xlsx = to_excel(estudiantes)
-        st.download_button(
-         label="Descargar Base de datos estudiantes",
-         data=df_xlsx,
-         file_name='Estudiantes.xlsx',
-         mime='text/xlsx', key=2
-        )
-        directivos = read_database('data/descargables/DirectivosCFK.xlsx')
-        df_xlsx = to_excel(directivos)
-        st.download_button(
-         label="Descargar Base de datos directivos",
-         data=df_xlsx,
-         file_name='Directivos.xlsx',
-         mime='text/xlsx', key=2
-        )
-    
-    with b_col3:
-        plan = read_database('data/descargables/PlanCFK.xlsx')
-        df_xlsx = to_excel(plan)
-        st.download_button(
-         label="Descargar Base de datos Plan de area",
-         data=df_xlsx,
-         file_name='Plan.xlsx',
-         mime='text/xlsx',key=3
-        )
-        
-        plan = read_database('data/descargables/LiderCFK.xlsx')
-        df_xlsx = to_excel(plan)
-        st.download_button(
-         label="Descargar Base de datos Lider de area",
-         data=df_xlsx,
-         file_name='Lider.xlsx',
-         mime='text/xlsx',key=4
-        )
+    st.write('''Los datos finales están disponibles en Drive para su *descarga*.
+    Utilice click derecho para descargar cada uno de los archivos. No intente abrirlo desde Drive''')
+    st.write('''
+    * :white_check_mark: [Bases de datos](https://drive.google.com/drive/folders/10-vecqL2rtGRXkZ4H6xkI4DY1Z5wr7fw?usp=sharing)
+    * :exclamation: [Registros eliminados](https://drive.google.com/drive/folders/1xaulGr1dAuJqx2AwtGRKCcRhm9jQZCUP?usp=sharing)
+    ''')
 
-    
-    
+    # b_col1, b_col2, b_col3 = st.columns(3)
+    #
+    # with b_col1:
+    #     df_xlsx = to_excel(tabla2)
+    #     st.download_button(
+    #      label="Descargar Avance Consolidación",
+    #      data=df_xlsx,
+    #      file_name='Avance Consolidación.xlsx',
+    #      mime='text/xlsx',key=1
+    #     )
+    #     docentes = read_database('data/descargables/DocentesCFK.xlsx')
+    #     df_xlsx = to_excel(docentes)
+    #     st.download_button(
+    #      label="Descargar Base de datos docentes",
+    #      data=df_xlsx,
+    #      file_name='Docentes.xlsx',
+    #      mime='text/xlsx',key=0
+    #     )
+    #
+    # with b_col2:
+    #     estudiantes = read_database('data/descargables/EstudiantesCFK.xlsx')
+    #     df_xlsx = to_excel(estudiantes)
+    #     st.download_button(
+    #      label="Descargar Base de datos estudiantes",
+    #      data=df_xlsx,
+    #      file_name='Estudiantes.xlsx',
+    #      mime='text/xlsx', key=2
+    #     )
+    #     directivos = read_database('data/descargables/DirectivosCFK.xlsx')
+    #     df_xlsx = to_excel(directivos)
+    #     st.download_button(
+    #      label="Descargar Base de datos directivos",
+    #      data=df_xlsx,
+    #      file_name='Directivos.xlsx',
+    #      mime='text/xlsx', key=2
+    #     )
+    #
+    # with b_col3:
+    #     plan = read_database('data/descargables/PlanCFK.xlsx')
+    #     df_xlsx = to_excel(plan)
+    #     st.download_button(
+    #      label="Descargar Base de datos Plan de area",
+    #      data=df_xlsx,
+    #      file_name='Plan.xlsx',
+    #      mime='text/xlsx',key=3
+    #     )
+    #
+    #     plan = read_database('data/descargables/LiderCFK.xlsx')
+    #     df_xlsx = to_excel(plan)
+    #     st.download_button(
+    #      label="Descargar Base de datos Lider de area",
+    #      data=df_xlsx,
+    #      file_name='Lider.xlsx',
+    #      mime='text/xlsx',key=4
+    #     )
+
+
+
     #st.download_button(label='Descargar Avance', export, file_name='Avance_Consolidación.csv',mime='text/csv')
