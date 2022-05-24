@@ -82,8 +82,8 @@ archivo_eliminados = "eliminados/Eliminados_directivos_" + datetime.now().strfti
 archivo_eliminados = ruta/archivo_eliminados
 
 archivo_descargable = ruta.parent.parent.parent/"data/descargables/DirectivosCFK.xlsx"
-#dfe.to_excel(archivo_eliminados, index=False)
-#df4.to_excel(archivo_descargable,index=False)
+dfe.to_excel(archivo_eliminados, index=False)
+df4.to_excel(archivo_descargable,index=False)
 print('Publicados ', df4.shape)
 print('Eliminados ', dfe.shape)
 sys.stdout.close()                # ordinary file object

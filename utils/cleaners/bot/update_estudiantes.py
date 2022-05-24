@@ -9,7 +9,7 @@ from datetime import datetime
 
 import sys
 temp = sys.stdout                 # store original stdout object for later
-sys.stdout = open('log.txt', 'w') # redirect all prints to this log file
+sys.stdout = open('log_estudiantes.txt', 'w') # redirect all prints to this log file
 
 ## Estudiantes
 
@@ -29,6 +29,7 @@ df0 = df0.rename(columns=dict_col_est)
 df0 = df0.drop(columns=df0.filter(regex=r'eliminar').columns)
 
 df0['N registro']=df0.index
+df0['Instrumento'] = 'Encuesta estudiantes'
 
 df1= df0.copy()
 
@@ -171,10 +172,9 @@ new_index=['N registro','Deseo participar en el estudio', 'Código IE', 'Grupo',
        '4.6 Conozco los riesgos que representa para la vida humana la desaparición de especies animales y vegetales.',
        '4.7 Me preocupa lo que sucede con la tala de árboles.',
        'Comentarios medioambiente',
-
        'Tipo de discapacidad',
        '¿Te reconoces como una persona con algún tipo de discapacidad?',
-       'Conoce GreenTIC']
+       'Conoce GreenTIC', 'Instrumento']
 print(df0.columns.duplicated())
 df0=df0.reindex(new_index, axis='columns')
 df1=df1.reindex(new_index, axis='columns')
