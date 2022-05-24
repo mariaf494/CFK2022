@@ -30,7 +30,7 @@ def read_database(name):
     return pd.read_excel(name)
 
 def app():
-    st.title('Avance Consolidación 2022')
+    st.title('Avance consolidación 2022')
 
     tabla = pd.read_excel('data/InstrumentosCFK.xlsx', index_col=0)
     st.write('Fecha de actualización:',tabla.loc[0,'Fecha'])
