@@ -95,7 +95,7 @@ dfe=df0[df0['N registro'].isin(registroseliminados)]
 archivo_eliminados = "eliminados/Eliminados_equipos_" + datetime.now().strftime("%d%m_%H:%M") + ".xlsx"
 archivo_eliminados = ruta/archivo_eliminados
 
-archivo_descargable = ruta.parent.parent.parent/"data/descargables/LideresCFK.xlsx"
+archivo_descargable = ruta.parent.parent.parent/"data/descargables/RecursosCFK.xlsx"
 dfe.to_excel(archivo_eliminados, index=False)
 df6.to_excel(archivo_descargable,index=False)
 
