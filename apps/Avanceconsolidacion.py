@@ -57,7 +57,7 @@ def app():
      label="Descargar Avance Consolidación",
      data=df_xlsx,
      file_name='Avance Consolidación.xlsx',
-     mime='text/xlsx',key=1
+     mime='text/xlsx',key=1)
 
 
     st.write("### Descarga de datos")
