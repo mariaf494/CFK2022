@@ -73,5 +73,3 @@ Index(['Código IE',
        '4.11 Las directivas y el Consejo Directivo participan y evalúan la implementación de sistemas eficientes del plan de estudios del área.]',
        'Comentarios P4', 'N registro', 'Fecha', 'Instrumento'],
       dtype='object')
-Publicados  (251, 51)
-Eliminados  (3, 51)
