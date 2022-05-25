@@ -7,4 +7,4 @@ Error!!  LideresCFK.xlsx
 2          3  Encuesta Equipos       231  3
 3          4  Encuesta Equipos       198  4
 4          5  Encuesta Equipos        29  5
-Tamaño pivot (250, 7)
+Tamaño pivot (251, 7)
