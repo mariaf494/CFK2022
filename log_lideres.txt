@@ -1,8 +1,8 @@
-253    23/05
 254    23/05
 255    24/05
 256    24/05
 257    24/05
+258    24/05
 Name: Fecha, dtype: object
 Códigos líderes después de filtrar mayor menor:  ['001' '033' '004' '129' '007' '231' '092' '063' '166' '055' '213' '211'
  '151' '186' '107' '152' '066' '206' '123' '176' '235' '185' '002' '226'
@@ -74,4 +74,4 @@ Index(['Código IE',
        'Comentarios P4', 'N registro', 'Fecha', 'Instrumento'],
       dtype='object')
 Publicados  (251, 51)
-Eliminados  (3, 51)
+Eliminados  (4, 51)
