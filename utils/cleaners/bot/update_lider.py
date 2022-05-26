@@ -107,7 +107,7 @@ registroseliminados=set(df0['N registro']).difference(set(df5['N registro']))
 dfe=df0[df0['N registro'].isin(registroseliminados)]
 
 
-archivo_eliminados = "eliminados/Eliminados_lideres_" + datetime.now().strftime("%d%m_%H%M") + ".xlsx"
+archivo_eliminados = "eliminados/Eliminados_lideres.xlsx"
 archivo_eliminados = ruta/archivo_eliminados
 
 archivo_descargable = ruta.parent.parent.parent/"data/descargables/LideresCFK.xlsx"
