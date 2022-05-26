@@ -181,7 +181,7 @@ df1=df1.reindex(new_index, axis='columns')
 
 registroseliminados=set(df0['N registro']).difference(set(df1['N registro']))
 dfe=df0[df0['N registro'].isin(registroseliminados)]
-archivo_eliminados = "eliminados/Eliminados_estudiantes_" + datetime.now().strftime("%d%m_%H:%M") + ".xlsx"
+archivo_eliminados = "eliminados/Eliminados_estudiantes_" + datetime.now().strftime("%d%m_%H%M") + ".xlsx"
 archivo_eliminados = ruta/archivo_eliminados
 archivo_descargable = ruta.parent.parent.parent/"data/descargables/EstudiantesCFK.xlsx"
 dfe.to_excel(archivo_eliminados, index=False)
