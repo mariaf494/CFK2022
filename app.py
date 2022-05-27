@@ -13,7 +13,7 @@ PAGES = {
     "Inicio": inicio,
     "Avance Consolidación": Avanceconsolidacion,
     "Caracterización Inicial": dashboard_cons,
-    "Prueba marco": marco
+    "Marco de consolidación": marco
 }
 
 
@@ -21,7 +21,7 @@ def main():
     st.set_page_config(
     layout="wide",
     page_title="CFK2021",
-    page_icon="👩‍👨‍💻")
+    page_icon="👩‍💻")
     st.sidebar.title("CFK 2022")
     pag = st.sidebar.radio("Página: ", list(PAGES.keys()))
 
