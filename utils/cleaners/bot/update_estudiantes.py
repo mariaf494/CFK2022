@@ -31,6 +31,12 @@ df0 = df0.drop(columns=df0.filter(regex=r'eliminar').columns)
 df0['N registro']=df0.index
 df0['Instrumento'] = 'Encuesta estudiantes'
 
+df0['Timestamp'] = pd.to_datetime(df0['Timestamp'])
+
+df0['Fecha'] = df0.Timestamp.dt.strftime('%d/%m')
+
+
+
 df1= df0.copy()
 
 diccionariogrados={'Noveno':"09", 'Octavo':"08", 'Sexto':"06", 'Décimo':"10", 'Séptimo':"07", 'Once':"11", 'Quinto':"05"}
@@ -38,12 +44,6 @@ diccionariogrados={'Noveno':"09", 'Octavo':"08", 'Sexto':"06", 'Décimo':"10", '
 df1["Grado"]=df1["Grado"].replace(diccionariogrados)
 
 df1.loc[(df1.index.isin(range(9022,9123)))&(df1['Código IE']==105),'Código IE'] = 103
-
-df1['Timestamp'] = pd.to_datetime(df1['Timestamp'])
-df1 = df1[df1.Timestamp>'2022-04-14']
-df1['Fecha'] = df1.Timestamp.dt.strftime('%d/%m')
-df1['Fecha'][:5]
-
 
 df1 = df1.drop(columns='Timestamp')
 
