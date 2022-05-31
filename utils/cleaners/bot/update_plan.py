@@ -32,7 +32,7 @@ df0 = df0.drop(columns=df0.filter(regex=r'eliminar').columns)
 df0['N registro']=df0.index
 
 df0['Timestamp'] = pd.to_datetime(df0['Timestamp'])
-df0 = df0[df0.Timestamp>'2022-04-14']
+
 df0['Fecha'] = df0.Timestamp.dt.strftime('%d/%m')
 print(df0['Fecha'][-5:])
 

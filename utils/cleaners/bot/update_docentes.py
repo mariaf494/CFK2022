@@ -30,19 +30,23 @@ df0 = df0.drop(columns=df0.filter(regex=r'eliminar').columns)
 
 
 df0['N registro']=df0.index
+df0['Timestamp'] = pd.to_datetime(df0['Timestamp'])
+df0['Fecha'] = df0.Timestamp.dt.strftime('%d/%m')
+
+print(df0['Fecha'][-5:])
 df3=df0.copy()
 df3['Instrumento']="Encuesta docentes"
 
 
 
-df3['Timestamp'] = pd.to_datetime(df3['Timestamp'])
-df3 = df3[df3.Timestamp>'2022-04-14']
-df3['Fecha'] = df3.Timestamp.dt.strftime('%d/%m')
-print(df3['Fecha'][-5:])
+
+## Esta línea falló aparentemente por cambios en el formato de fecha en sheets
+#df3 = df3[df3.Timestamp>'2022-04-14']
+
 
 df3 = df3.drop(columns='Timestamp')
-
-
+df3 = df3[df3['N registro']>2]
+print("Head, filtrado ", df3.head())
 df3['Implementa fichas'] = df3['Implementa fichas'].fillna("No")
 df3[df3.filter(regex='^1.*').columns] = df3[df3.filter(regex='^1.*').columns].fillna("Totalmente en Desacuerdo")
 df3[df3.filter(regex='^2.*').columns] = df3[df3.filter(regex='^2.*').columns].fillna("Totalmente en Desacuerdo")
